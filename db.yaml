@@ -1,0 +1,4 @@
+mysql_host: 'localhost'
+mysql_user: 'blog_admin'
+mysql_password: '2554963demidovT!'
+mysql_db: 'blog_db'

@@ -3,5 +3,19 @@
 {% block title %} My posts {% endblock title %}
 
 {% block sub_content %}
-    <h1>My posts</h1>
+    {% if my_posts %}
+        <div class="container mt-4">
+            {% for post in my_posts %}
+            <div class="post d-flex flex-column">
+                <h2><a href="/posts/{{ post.post_id }}">{{ post.title }}</a></h2>
+                <p>{{ post.body | safe }}</p>
+            </div>
+            <a href="/edit-post/{{ post.post_id }}" class="btn btn-primary">Edit</a>
+            <a href="/delete-post/{{ post.post_id }}" class="btn btn-outline-danger">Delete</a>
+            <hr>
+            {% endfor %}
+        </div>
+    {% else %}
+    <h3>No posts has been added!</h3>
+    {% endif %}
 {% endblock sub_content %}

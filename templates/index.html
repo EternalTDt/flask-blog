@@ -3,5 +3,17 @@
 {% block title %} Main page {% endblock title %}
 
 {% block sub_content %}
-    <h1>Index</h1>
+    <div class="container">
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post d-flex flex-column">
+                <h2><a href="/posts/{{ post.post_id }}">{{ post.title }}</a></h2>
+                <p>Written by {{ post.author }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <h3>There are no posts to show</h3>
+    {% endif %}
+    </div>
 {% endblock sub_content %}

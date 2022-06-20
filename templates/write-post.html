@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 
-{% block title %} Write post {% endblock title %}
+{% block title %} New post {% endblock title %}
 
 {% block sub_content %}
-    <h1>Write post</h1>
+<div class="container">
+    <div class="text-center">
+        <h1>New post</h1>
+    </div>
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title">
+        </div>
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea type="text" class="form-control ckeditor" id="body" name="body" placeholder="Enter a body"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
 {% endblock sub_content %}
